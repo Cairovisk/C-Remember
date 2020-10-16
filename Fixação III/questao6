@@ -1,0 +1,20 @@
+principal( ) 
+inicio
+ 
+inteiro num1, num2, val1, val2; 
+
+//Entrada de dados
+escreva(“Digite dois valores inteiros: “); 
+leia(“%i%i”, &num1, &num2); 
+
+//Processamento de dados 
+val1 <= num1;
+val2 <= num2;
+num1 <= val2;
+num2 <= val1;
+
+//Saída de dados
+escreva(“Valores iniciais: %i %i“, val1, val2); 
+escreva(“Valores trocados: %i %i“,num1, num2); 
+
+fim 
