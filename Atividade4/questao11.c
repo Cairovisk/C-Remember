@@ -1,48 +1,66 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-const int lin = 5, col = 4;
-int i, j;
-
-void leVendas(float matrizVendas[lin][col]) {
-    printf("Digite o valor das vendas dos vendedores por semana: \n");
-
-    for(i = 0; i < lin; i++) {
-        for(j = 0; j < col; j++) {
-            printf("Valor da semana %d do vendedor %d", i+1, j+1);
-            scanf("%f", &matrizVendas[i][j]);
-        }
-        printf("\n");
-    }
-}
-
-void calculoTotalVendas(float matrizVendas[lin][col], float *vetorVendas ) {
-    for(i = 0; i < lin; i++) {
-
-        vetorVendas[i] = 0;
-        for(j = 0; j < col; j++) {
-            vetorVendas[i] += matrizVendas[i][j];
-        }
-    }
-}
-
-void calculoTotalSemanal(float matrizVendas[lin][col], float *vetorSemana) {
-    for(j = 0; j < lin; j++) {
-
-        vetorSemana[j] = 0;
-        for(i = 0; i < col; i++) {
-            vetorSemana[i] += matrizVendas[i][j];
-        }
-    }
-}
-
+int numRandom(), lin = 5, col = 3;
 int main(void) {
-    int matrizA[lin][col] = {  29, 81, 37, 52, 14, 53, 71, 93, 5, 3, 49, 
-    54, 24, 94, 15 }, matrizB[lin][col] = { 29, 81, 37, 52, 14, 53, 71, 93, 5, 3, 49, 
-    54, 24, 94, 15 };
-    
+    int soma[50][50], lista[50][50], somaVendedor, i, j;
 
-    somaMatriz(matrizA, matrizB); // Chamada do método somaMatriz
+    for (i = 0 ; i < lin; i++){
+        for (j = 0; j < col; j++){
+            int num = numRandom();
+            printf("%d   ", num);
+            soma[i][j] += num;
+            lista[i][j]=num;
+        }
+        printf("\n\n");
+    }
 
-    return 0;
+    printf("\n");
+
+    somaVendedor = 0;
+
+    printf("O primeiro vendedor vendeu: ");
+
+    for (j = 0; j < col; j++){
+        somaVendedor += lista[0][j];
+    }
+    printf("%d\n", somaVendedor);
+
+    somaVendedor = 0;
+
+    printf("O segundo vendedor vendeu: ");
+
+    for (j = 0; j < col; j++){
+        somaVendedor += lista[1][j];
+    }
+    printf("%d\n", somaVendedor);
+
+    somaVendedor = 0;
+
+    printf("O terceiro vendedor vendeu: ");
+    for (j = 0; j < col; j++){
+        somaVendedor += lista[2][j];
+    }
+    printf("%d\n", somaVendedor);
+
+    somaVendedor = 0;
+
+    printf("O quarto vendedor vendeu: ");
+    for (j = 0; j < col; j++){
+    somaVendedor += lista[3][j];
+    }
+    printf("%d\n", somaVendedor);
+
+    somaVendedor = 0;
+
+    printf("O quinto vendedor vendeu: ");
+    for (j = 0; j < col; j++){
+        somaVendedor += lista[4][j];
+    }
+    printf("%d\n", somaVendedor);
+}
+
+int numRandom() {
+  int num = (rand() % 10); 
+  return num;
 }
