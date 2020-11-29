@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int numRandom(), lin = 5, col = 3;
+int numRandom(), lin = 5, col = 4;
 int main(void) {
     int soma[50][50], lista[50][50], somaVendedor, i, j;
 
